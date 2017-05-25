@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
-import Search from './Search'
-import Results from './Results'
+import SearchContainer from './SearchContainer'
 import logo from './logo.svg';
 import './Home.css';
 
 class Home extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className="Home">
           <h1>React TVMaze</h1>
-          {
-            this.props.hasSearched ?
-            <Results shows={this.props.shows} /> :
-            <Search />
-          }
+          <SearchContainer />
       </div>
     );
   }
