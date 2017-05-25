@@ -75,6 +75,9 @@ const results = [
 
 ## [Build a Static Version of the App](https://facebook.github.io/react/docs/thinking-in-react.html#step-2-build-a-static-version-in-react)
 
+First we will build a static version of the app passing all of our data by `props`.
+This makes it much easier to avoid getting bogged down in tricky details of functionality while implementing the visual appearance of the UI.
+
 ## More on create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

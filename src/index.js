@@ -46,5 +46,5 @@ const shows = [
   }
 ]
 
-ReactDOM.render(<Home shows={shows} />, document.getElementById('root'));
+ReactDOM.render(<Home shows={shows} hasSearched={false} />, document.getElementById('root'));
 registerServiceWorker();
