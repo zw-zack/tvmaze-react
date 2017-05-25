@@ -73,6 +73,8 @@ const results = [
 ]
 ```
 
+## [Build a Static Version of the App](https://facebook.github.io/react/docs/thinking-in-react.html#step-2-build-a-static-version-in-react)
+
 ## More on create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
