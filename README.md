@@ -78,6 +78,40 @@ const results = [
 First we will build a static version of the app passing all of our data by `props`.
 This makes it much easier to avoid getting bogged down in tricky details of functionality while implementing the visual appearance of the UI.
 
+## [Identify the Minimal Representation of UI State](https://facebook.github.io/react/docs/thinking-in-react.html#step-3-identify-the-minimal-but-complete-representation-of-ui-state)
+
+For our app to work we need:
+- `movies` (movies to show)
+- `query` (title being searched)
+- `hasSearched` (boolean determining wether to show the search input or the results)
+
+All of these are subject to change over time and so each must be kept in state.
+
+## [Identify Where Your State Should Live](https://facebook.github.io/react/docs/thinking-in-react.html#step-4-identify-where-your-state-should-live)
+
+Central to considering where state lives is the idea of **one way data flow**.
+The react documentation describes this step as "often the most challenging part for newcomers to understand".
+
+Our task here is to look for the component for each aspect of state that could be the one place where that state is managed.
+
+In our app, `query` is needed to keep track of what is going on in the search box, as well as to make the actual query.
+This request will return the movies to the same component which managed the query so `movies` should be managed by the same component.
+Finally, we have our `hasSearched` flag which we no to set when we make the request so these should all live in the same place.
+
+Currently, the parent to the `Results` and `Search` components is `Home`.
+We don't want to clutter our top level component as our app grows so this segways nicely into the idea of Container and Presentational Components.
+
+### [Container & Presentational Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+The above workflow has led to the currently very popular component architecture of distinguishing container and presentational components.
+
+Presentational components are components that render themselves based solely on the information that they receive from props. At this point, all of our components are presentational.
+
+Container components are components whose job it is to exclusively manage state and as props any data needed by its presentational components.
+
+This leads to a very nice division where state management and presentation are cleanly separated.
+
+We are going to create a `SearchContainer` to manage `query`, `shows`, and `hasSearched`.
+
 ## More on create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
