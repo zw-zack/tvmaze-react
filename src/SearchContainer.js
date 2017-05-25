@@ -22,9 +22,11 @@ class SearchContainer extends Component {
   }
 
   onSubmitQuery(searchText) {
-    this.setState({
-      shows: queryTVMaze(),
-      hasSearched: true
+    queryTVMaze(searchText).then((shows)=>{
+      this.setState({
+        shows: shows,
+        hasSearched: true
+      })
     })
   }
 

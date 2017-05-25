@@ -112,6 +112,16 @@ This leads to a very nice division where state management and presentation are c
 
 We are going to create a `SearchContainer` to manage `query`, `shows`, and `hasSearched`.
 
+## [Add Inverse Data Flow](https://facebook.github.io/react/docs/thinking-in-react.html#step-5-add-inverse-data-flow)
+The last step is passing callbacks through props to presentational components to provide behavior.
+We will need three functions defined on the `SearchContainer` component to provide necessary behavior to `Search` and `Results`:
+
+1. `handleSearchInput` for managing changes to the input field
+2. `onSubmitQuery` for kicking of the ajax request
+3. `onSearchAgain` to set state back to render the search bar
+
+> What is the point of all of these `.bind(this)` statements?
+
 ## More on create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
