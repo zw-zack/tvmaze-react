@@ -99,7 +99,7 @@ This request will return the movies to the same component which managed the quer
 Finally, we have our `hasSearched` flag which we no to set when we make the request so these should all live in the same place.
 
 Currently, the parent to the `Results` and `Search` components is `Home`.
-We don't want to clutter our top level component as our app grows so this segways nicely into the idea of Container and Presentational Components.
+We don't want to clutter our top level component as our app grows so this segues nicely into the idea of Container and Presentational Components.
 
 ### [Container & Presentational Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 The above workflow has led to the currently very popular component architecture of distinguishing container and presentational components.
