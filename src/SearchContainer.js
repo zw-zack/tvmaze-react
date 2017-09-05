@@ -55,6 +55,15 @@ class SearchContainer extends Component {
       hasSearched: false
     }
     this.onSubmitQuery = this.onSubmitQuery.bind(this)
+    this.handleSearchInput = this.handleSearchInput.bind(this)
+  }
+
+  handleSearchInput(e) {
+    this.setState({
+      query: e.target.value
+    })
+
+    console.log('query: ', this.state.query)
   }
 
   onSubmitQuery(e) {
@@ -68,7 +77,8 @@ class SearchContainer extends Component {
     let output = (
       <Search
         query={this.state.query}
-        onSubmitQuery={this.onSubmitQuery} />
+        onSubmitQuery={this.onSubmitQuery}
+        handleSearchInput={this.handleSearchInput} />
     )
     if (this.state.hasSearched) {
       output = ( <Results shows={this.state.shows} /> )
