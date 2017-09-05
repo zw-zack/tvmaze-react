@@ -1,0 +1,9 @@
+.resultsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.resultsContainer div {
+  margin: 20px;
+}
