@@ -52,12 +52,24 @@ class SearchContainer extends Component {
     this.state = {
       query: '',
       shows: results,
-      hasSearched: true
+      hasSearched: false
     }
+    this.onSubmitQuery = this.onSubmitQuery.bind(this)
+  }
+
+  onSubmitQuery(e) {
+    e.preventDefault()
+    this.setState({
+      hasSearched: true
+    })
   }
 
   render () {
-    let output = ( <Search query={this.state.query} /> )
+    let output = (
+      <Search
+        query={this.state.query}
+        onSubmitQuery={this.onSubmitQuery} />
+    )
     if (this.state.hasSearched) {
       output = ( <Results shows={this.state.shows} /> )
     }
