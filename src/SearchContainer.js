@@ -56,6 +56,7 @@ class SearchContainer extends Component {
     }
     this.onSubmitQuery = this.onSubmitQuery.bind(this)
     this.handleSearchInput = this.handleSearchInput.bind(this)
+    this.handleSearchAgain = this.handleSearchAgain.bind(this)
   }
 
   handleSearchInput(e) {
@@ -73,6 +74,12 @@ class SearchContainer extends Component {
     })
   }
 
+  handleSearchAgain(e) {
+    this.setState({
+      hasSearched: false
+    })
+  }
+
   render () {
     let output = (
       <Search
@@ -81,7 +88,7 @@ class SearchContainer extends Component {
         handleSearchInput={this.handleSearchInput} />
     )
     if (this.state.hasSearched) {
-      output = ( <Results shows={this.state.shows} /> )
+      output = ( <Results shows={this.state.shows} handleSearchAgain={this.handleSearchAgain} /> )
     }
     return (
       <div>{output}</div>
