@@ -1,14 +1,13 @@
-import $ from 'jquery'
+import axios from 'axios'
 
 export function queryTVMaze (query) {
   console.log('about to search movies')
   const term = query.replace(/\s/, "+"); // replace any white space characters with a "+"
-  var url = "http://api.tvmaze.com/search/shows?q=" + term;
+  const url = "http://api.tvmaze.com/search/shows?q=" + term;
 
-  return $.getJSON(url).then(function(response) {
-    console.log('raw response:')
-    console.log(response)
-    return response.map(result => {
+  return axios.get(url).then(response => {
+    console.log('raw response:', response)
+    return response.data.map(result => {
       const {name, image} = result.show;
       return {
         name,
