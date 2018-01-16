@@ -3,7 +3,7 @@ import axios from 'axios'
 export function queryTVMaze (query) {
   console.log('about to search movies')
   const term = query.replace(/\s/, "+"); // replace any white space characters with a "+"
-  const url = "http://api.tvmaze.com/search/shows?q=" + term;
+  const url = "https://api.tvmaze.com/search/shows?q=" + term;
 
   return axios.get(url).then(response => {
     console.log('raw response:', response)
