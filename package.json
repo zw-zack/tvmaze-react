@@ -2,6 +2,7 @@
   "name": "react-tvmaze",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://git.generalassemb.ly/pages/ga-wdi-exercises/react-tvmaze/",
   "dependencies": {
     "axios": "^0.17.1",
     "gh-pages": "^1.1.0",
