@@ -12,7 +12,8 @@ export function queryTVMaze (query) {
       const {name, image} = result.show;
       return {
         name,
-        image: image.medium
+        image: image && image.medium 
+               || 'https://cdn.browshot.com/static/images/not-found.png'
       }
     })
   });
