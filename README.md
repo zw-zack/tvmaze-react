@@ -1,5 +1,8 @@
 # React TVMaze
 
+## Deployed App
+https://git.generalassemb.ly/pages/ga-wdi-exercises/react-tvmaze/
+
 ## [Start with a Mock](https://facebook.github.io/react/docs/thinking-in-react.html#start-with-a-mock)
 First step in creating a React app is to start with a mock and some sample data.
 These are the two views for our app:
