@@ -34,50 +34,7 @@ Given these breakdowns we have a component hierarchy that looks like:
     - `Result`
 
 #### Sample Data
-
-```js
-const results = [
-  {
-    "name":"The Office",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/85/213184.jpg"
-  },
-  {
-    "name":"Radiant Office",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/101/254702.jpg"
-  },
-  {
-    "name":"The Office",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/93/234802.jpg"
-  },
-  {
-    "name":"Mr. Box Office",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/97/244942.jpg"
-  },
-  {
-    "name":"The Queen of Office",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/58/146476.jpg"
-  },
-  {
-    "name":"No Offence",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/48/121682.jpg"
-  },
-  {
-    "name":"Oficer",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/29/73047.jpg"
-  },
-  {
-    "name":"Trzeci oficer",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/29/73053.jpg"
-  },
-  {
-    "name":"Line Offline: Salaryman",
-    "image":"http://static.tvmaze.com/uploads/images/medium_portrait/57/143508.jpg"
-  },
-  {
-    "name":"Utenai Keikan","image":"http://static.tvmaze.com/uploads/images/medium_portrait/42/106093.jpg"
-  }
-]
-```
+Use `results.json` as the result you would get back from any search.
 
 ## [Build a Static Version of the App](https://facebook.github.io/react/docs/thinking-in-react.html#step-2-build-a-static-version-in-react)
 
