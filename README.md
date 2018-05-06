@@ -84,3 +84,9 @@ We will need three functions defined on the `SearchContainer` component to provi
 3. `onSearchAgain` to set state back to render the search bar
 
 > What is the point of all of these `.bind(this)` statements?
+
+### Further
+Create the ability to sort on different fields.
+
+### Further
+Link the show result to another part of the TVmaze api. By hand, download and include the results of that api search to use in your react app.
