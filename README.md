@@ -147,37 +147,34 @@ The user-inputted value will be `SearchContainer`'s `this.state.query`, after yo
 
 There, you'll see an example of a URL you can use to query the TVMaze API. Ultimately, you'll want to replace the example tv program, `girls`, with whatever the user has input into the text box. This should be the value of `SearchContainer`'s `this.state.query`, after you've set everything up properly.
 
-### Adding axios
-
-> Installing axios...
-
-```sh
- $ yarn add axios
-```
-
-or
-
-```sh
- $ npm i axios
-```
-
-Yarn is Facebook's version of `npm`. If you don't have it, can be installed with `brew install yarn`, or `npm i -g yarn`.
-
-### Fetching Data from the API with axios
+### Fetching Data from the API with fetch
 
 > Create a new file called `Util.js`. Export a function like so...
 
 ```js
-import axios from 'axios'
-
-export function queryTVMazeAPI (query) {
-  // fill url in with a URL based on the example at: 
+export queryTVMazeAPI (query) => {
+  // fill url in with a URL based on the example at:
   // https://www.tvmaze.com/api#show-search
   // replace a part of the example URL with the user input, which you can 
   // assume will be the parameter of this function, `query`
-  const url = '' 
-  return axios.get(url) //make sure to return something
-       .then(response => console.log(response))
+  const url = ''
+  fetch(url)
+    .then((response) => {
+        if (response.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+          return;
+        }
+
+        // Examine the text in the response
+        response.json().then(function(data) {
+          console.log(data); //make sure to return something
+        });
+      }
+    )
+    .catch((err) => {
+      console.log('Fetch Error :-S', err);
+    });
 }
 ```
 
@@ -190,12 +187,8 @@ import {queryTVMazeAPI} from './Util'
 
 You can now use your queryTVMazeAPI function, which takes one argument, in `SearchContainer`. You will want to pass the user's query as argument to this function when a user has submitted a search.
 
+### Further
+Implement error handling for the fetch. Re-do the request __x__ times before you message the user that it failed.
 
-## Appendix
-
-### More on create-react-app
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+### Further
+Create functionality for infinite scroll of tvmaze's full schedule: [https://www.tvmaze.com/api#full-schedule](https://www.tvmaze.com/api#full-schedule)
