@@ -3,6 +3,9 @@
 ## Deployed App
 https://git.generalassemb.ly/pages/ga-wdi-exercises/react-tvmaze/
 
+## Starter Code:
+react-express-webpack starter app: [https://github.com/wdi-sg/react-express-webpack/tree/tvmaze-react](https://github.com/wdi-sg/react-express-webpack/tree/tvmaze-react)
+
 ## [Start with a Mock](https://facebook.github.io/react/docs/thinking-in-react.html#start-with-a-mock)
 First step in creating a React app is to start with a mock and some sample data.
 These are the two views for our app:
@@ -124,75 +127,3 @@ We will need three functions defined on the `SearchContainer` component to provi
 3. `onSearchAgain` to set state back to render the search bar
 
 > What is the point of all of these `.bind(this)` statements?
-
-## Pre-API Integration Steps
-
-Make sure that your TVMaze application handles user input properly.
-
-### Handling User Input
-
-The user-inputted value will be `SearchContainer`'s `this.state.query`, after you've done the following things...
-1. In `SearchContainer`, add the `handleSearchInput` method to the `class`, and bind it in the `constructor`, if you have not already.
-2. Pass `handleSearchInput` to the `Search` component via props.
-3. In `Search`, you'll have to use the `onChange` event-listener prop to attach the method `handleSearchInput` from `SearchContainer`, available in `Search` as `this.props.handleSubmitInput`. [See here for an example from the React docs](https://reactjs.org/docs/forms.html#controlled-components).
-
-> `handleSearchInput` is being passed down from `SearchContainer`, the parent element, to `Search` the child component. In React's model of unidirectional data-flow, parent components cannot be changed by their children **unless the parent component provides a helper method to its children, passed down via props, that changes the state on the parent**.
-
-## Integrate with the TVMaze API
-
-> Documentation here: https://www.tvmaze.com/api#show-search
-
-There, you'll see an example of a URL you can use to query the TVMaze API. Ultimately, you'll want to replace the example tv program, `girls`, with whatever the user has input into the text box. This should be the value of `SearchContainer`'s `this.state.query`, after you've set everything up properly.
-
-### Adding axios
-
-> Installing axios...
-
-```sh
- $ yarn add axios
-```
-
-or
-
-```sh
- $ npm i axios
-```
-
-Yarn is Facebook's version of `npm`. If you don't have it, can be installed with `brew install yarn`, or `npm i -g yarn`.
-
-### Fetching Data from the API with axios
-
-> Create a new file called `Util.js`. Export a function like so...
-
-```js
-import axios from 'axios'
-
-export function queryTVMazeAPI (query) {
-  // fill url in with a URL based on the example at: 
-  // https://www.tvmaze.com/api#show-search
-  // replace a part of the example URL with the user input, which you can 
-  // assume will be the parameter of this function, `query`
-  const url = '' 
-  return axios.get(url) //make sure to return something
-       .then(response => console.log(response))
-}
-```
-
-> Import this function in `SearchContainer` like so...
-
-```js
-//somewhere at the top of SearchContainer...
-import {queryTVMazeAPI} from './Util'
-```
-
-You can now use your queryTVMazeAPI function, which takes one argument, in `SearchContainer`. You will want to pass the user's query as argument to this function when a user has submitted a search.
-
-
-## Appendix
-
-### More on create-react-app
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
