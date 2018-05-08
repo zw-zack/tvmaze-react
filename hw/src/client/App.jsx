@@ -11,26 +11,12 @@ console.log(results);
 class App extends React.Component {
   constructor() {
     super();
-    // this.searchClick = this.searchClick.bind(this);
     this.state = {
       message: 'wow'
     };
   }
 
-  // searchClick() {
-  //   var listToPlace = this.state.list;
-
-  //   for (var i = 0; i < results.length; i++) {
-  //     listToPlace.push(results[i].show.name);
-  //   }
-  //   this.setState({list: listToPlace});
-  // }
-
   render() {
-    // let itemsElements = this.state.list.map((item) => {
-    //   return <li>{item}</li>;
-    // });
-
     return (
       <div className={styles.main}>
         Welcome.
